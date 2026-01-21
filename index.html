@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mahedi Hasan | Accounting → AI | Research</title>
+  <meta name="description" content="Mahedi Hasan — Accounting background, AI Master's student, Python, research in Business Analytics, AI & Data Science."/>
+  <style>
+    :root{
+      --bg:#0b1220; --card:rgba(255,255,255,.06); --text:#e7eefc; --muted:rgba(231,238,252,.72);
+      --border:rgba(255,255,255,.12); --accent:#7c5cff; --shadow:0 18px 60px rgba(0,0,0,.35);
+    }
+    [data-theme="light"]{
+      --bg:#f6f7fb; --card:rgba(0,0,0,.04); --text:#0f172a; --muted:rgba(15,23,42,.72);
+      --border:rgba(0,0,0,.12); --shadow:0 18px 60px rgba(2,6,23,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1000px 600px at 10% 10%, rgba(124,92,255,.25), transparent 55%),
+        radial-gradient(900px 550px at 90% 30%, rgba(34,197,94,.18), transparent 55%),
+        radial-gradient(800px 500px at 50% 90%, rgba(59,130,246,.16), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:22px;}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(0,0,0,.35), transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    [data-theme="light"] .nav{
+      background: linear-gradient(to bottom, rgba(246,247,251,.92), rgba(246,247,251,.55));
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+      max-width:1100px; margin:0 auto; padding:12px 22px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;}
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(45deg, var(--accent), #38bdf8);
+      box-shadow: 0 0 18px rgba(124,92,255,.65);
+    }
+    .nav-links{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end; font-size:14px;}
+    .nav-links a{
+      padding:8px 10px; border-radius:10px; color: var(--muted);
+      border:1px solid transparent;
+    }
+    .nav-links a:hover{
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px; border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--text); cursor:pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      user-select:none; font-weight:650;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,0.07);}
+    .btn.primary{
+      border-color: rgba(124,92,255,.55);
+      background: linear-gradient(135deg, rgba(124,92,255,.22), rgba(56,189,248,.16));
+    }
+    .btn.primary:hover{border-color: rgba(124,92,255,.9);}
+    .btn.ghost{background: transparent; padding:9px 12px;}
+
+    .hero{
+      padding:54px 0 22px;
+      display:grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr; padding-top:32px;}
+    }
+    .card{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .hero-left{padding:26px;}
+    .tag{
+      display:inline-flex; gap:8px; align-items:center;
+      font-size:13px; color: var(--muted);
+      padding:8px 12px; border:1px solid var(--border);
+      border-radius:999px; background: rgba(255,255,255,0.03);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height:1.15; letter-spacing:-.7px;
+    }
+    .lead{color: var(--muted); font-size: 16px; margin:0 0 16px;}
+    .cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;}
+    .mini{display:grid; gap:12px; padding:18px;}
+    .stat{
+      padding:16px; border-radius:16px; border:1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+    }
+    .stat b{display:block; font-size:14px;}
+    .stat span{color:var(--muted); font-size:13px;}
+
+    section{padding:18px 0;}
+    .section-title{display:flex; align-items:center; justify-content:space-between; gap:12px; margin:8px 0 14px;}
+    .section-title h2{margin:0; font-size:20px; letter-spacing:-.2px;}
+    .grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;}
+    @media (max-width: 900px){ .grid{grid-template-columns: 1fr;} }
+    .item{padding:16px;}
+    .item h3{margin:0 0 6px; font-size:16px;}
+    .item p{margin:0; color:var(--muted); font-size:14px;}
+    .pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+    .pill{
+      font-size:12px; padding:6px 10px; border-radius:999px;
+      border:1px solid var(--border); color:var(--muted);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .list{margin:0; padding-left:18px; color:var(--muted); font-size:14px;}
+    .list li{margin:6px 0;}
+    .footer{margin-top:18px; padding:22px 0 44px; color:var(--muted); font-size:13px; text-align:center;}
+    .reveal{opacity:0; transform: translateY(10px); transition: all .6s ease;}
+    .reveal.show{opacity:1; transform: translateY(0);}
+    .linkline{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;}
+    .link-badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--border); background: rgba(255,255,255,0.03);
+      color: var(--muted); font-size:13px;
+    }
+    .link-badge:hover{color:var(--text); background: rgba(255,255,255,0.06);}
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Mahedi Hasan</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#publications">Publications</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+        <button class="btn ghost" id="themeBtn" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card hero-left reveal">
+        <div class="tag">🎓 Accounting → AI • 🐍 Python • 📊 Business Analytics & Research</div>
+        <h1>Hi, I’m <span style="color:var(--accent)">Mahedi Hasan</span>.</h1>
+        <p class="lead">
+          I’m a Master’s student in <b>Artificial Intelligence</b> and a business graduate (Accounting major),
+          focused on research at the intersection of <b>AI</b>, <b>data</b>, and <b>business decision-making</b>.
+        </p>
+
+        <div class="linkline">
+          <a class="link-badge" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mahedi-hasan-703ba51b6">LinkedIn</a>
+          <a class="link-badge" target="_blank" rel="noreferrer" href="https://scholar.google.com/citations?user=s9olNcUAAAAJ&hl=en">Google Scholar</a>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href="#contact">Contact</a>
+          <a class="btn" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mahedi-hasan-703ba51b6">Connect on LinkedIn</a>
+          <a class="btn" target="_blank" rel="noreferrer" href="https://scholar.google.com/citations?user=s9olNcUAAAAJ&hl=en">View Publications</a>
+        </div>
+      </div>
+
+      <div class="card mini reveal">
+        <div class="stat">
+          <b>Current Focus</b>
+          <span>AI research • Data science • Business analytics</span>
+        </div>
+        <div class="stat">
+          <b>Research Topic</b>
+          <span>AI in electricity theft detection</span>
+        </div>
+        <div class="stat">
+          <b>Highlights</b>
+          <span>Scholarship recipient • GRE 326 (Aug 2025)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+      <div class="section-title"><h2>About</h2></div>
+      <div class="card item">
+        <p>
+          I’m based in Taichung, Taiwan, and I enjoy research-driven work using Python, data analytics, and machine learning.
+          My interests include AI for business decision-making, causal inference, optimization, and FinTech analytics.
+        </p>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="reveal">
+      <div class="section-title"><h2>Education</h2></div>
+      <div class="grid">
+        <div class="card item">
+          <h3>Master’s in Artificial Intelligence (Ongoing)</h3>
+          <p>National Yunlin University of Science & Technology, Taiwan • 2024–2026</p>
+          <div class="pill-row">
+            <span class="pill">AI</span><span class="pill">Machine Learning</span><span class="pill">Research</span>
+          </div>
+        </div>
+        <div class="card item">
+          <h3>BBA (Accounting Major)</h3>
+          <p>National University, Bangladesh</p>
+          <div class="pill-row">
+            <span class="pill">Accounting</span><span class="pill">Reporting</span><span class="pill">Analytics</span>
+          </div>
+        </div>
+        <div class="card item">
+          <h3>Testing & Awards</h3>
+          <p>GRE 326 (Aug 2025) • Scholarship recipient</p>
+          <div class="pill-row">
+            <span class="pill">GRE</span><span class="pill">Scholarship</span><span class="pill">Merit-based</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <div class="section-title"><h2>Skills</h2></div>
+      <div class="grid">
+        <div class="card item">
+          <h3>AI & Data</h3>
+          <p>Machine learning, deep learning, data analysis & visualization.</p>
+          <div class="pill-row">
+            <span class="pill">Machine Learning</span><span class="pill">Deep Learning</span><span class="pill">Visualization</span>
+          </div>
+        </div>
+        <div class="card item">
+          <h3>Programming</h3>
+          <p>Python for data tasks and research workflows.</p>
+          <div class="pill-row">
+            <span class="pill">Python</span><span class="pill">Data Cleaning</span><span class="pill">Analytics</span>
+          </div>
+        </div>
+        <div class="card item">
+          <h3>Tools</h3>
+          <p>Excel, Power BI, Word, PowerPoint (reporting & presentations).</p>
+          <div class="pill-row">
+            <span class="pill">Excel</span><span class="pill">Power BI</span><span class="pill">Reporting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="reveal">
+      <div class="section-title"><h2>Publications</h2></div>
+      <div class="card item">
+        <ul class="list">
+          <li>Green Human Resource Management Practices on the Sustainable Performance of India's Sports Sector (2025)</li>
+          <li>The Role of ESG Disclosure on Firm Value in ASEAN (2025)</li>
+          <li>Impact of Eco-Friendly Marketing on Consumer Behavior in Bangladesh (2024)</li>
+          <li>Conference papers (presented; publication in progress)</li>
+        </ul>
+        <div class="cta" style="margin-top:14px;">
+          <a class="btn" target="_blank" rel="noreferrer" href="https://scholar.google.com/citations?user=s9olNcUAAAAJ&hl=en">See on Google Scholar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section id="leadership" class="reveal">
+      <div class="section-title"><h2>Leadership & Volunteering</h2></div>
+      <div class="grid">
+        <div class="card item">
+          <h3>Rotaract Club</h3>
+          <p>President & Vice President, Rotaract Club of Cox’s Bazar Shoikot (2022–2024).</p>
+          <div class="pill-row">
+            <span class="pill">Leadership</span><span class="pill">Teamwork</span><span class="pill">Community</span>
+          </div>
+        </div>
+        <div class="card item">
+          <h3>The Hunger Project</h3>
+          <p>Volunteer, Bridge Council under The Hunger Project (2018–2024).</p>
+          <div class="pill-row">
+            <span class="pill">Volunteering</span><span class="pill">Social Impact</span>
+          </div>
+        </div>
+        <div class="card item">
+          <h3>Research Interests</h3>
+          <p>Business decision-making, causal inference, optimization, fairness & human–AI collaboration, FinTech.</p>
+          <div class="pill-row">
+            <span class="pill">Business Analytics</span><span class="pill">Causal Inference</span><span class="pill">Ethics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <div class="section-title"><h2>Contact</h2></div>
+      <div class="card item">
+        <p style="margin-bottom:12px;">
+          Interested in research collaboration (Business Analytics / AI / Data Science) or academic opportunities? Feel free to reach out.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:mahedihasanofficial39@gmail.com">Email</a>
+          <a class="btn" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mahedi-hasan-703ba51b6">LinkedIn</a>
+          <a class="btn" target="_blank" rel="noreferrer" href="https://scholar.google.com/citations?user=s9olNcUAAAAJ&hl=en">Google Scholar</a>
+        </div>
+        <p style="margin-top:12px; color:var(--muted); font-size:13px;">
+          Location: Taichung, Taiwan
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> Mahedi Hasan • Built with GitHub Pages
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const themeBtn = document.getElementById("themeBtn");
+    const saved = localStorage.getItem("theme");
+    if (saved) document.documentElement.setAttribute("data-theme", saved);
+
+    function updateIcon(){
+      const theme = document.documentElement.getAttribute("data-theme");
+      themeBtn.textContent = theme === "light" ? "🌙" : "☀️";
+    }
+    updateIcon();
+
+    themeBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      updateIcon();
+    });
+
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
